@@ -44,7 +44,6 @@ then
 	then
 		exit 1
 	fi	
-	#urlplaylist=$(curl -s 'https://www.googleapis.com/youtube/v3/playlistItems?part=snippet&playlistId=$idselect&key=AIzaSyCOfyJ7O-7H0vkerfMbja3QOmjFxSsah6Q' --header 'Accept: application/json' --compressed)
 	urlp="https://www.googleapis.com/youtube/v3/playlistItems?part=snippet&playlistId=$idselect&key=AIzaSyAqtO7pIY-QqHpblNLWdXMNEcmV7SRkUNw"
 	urlplaylist=$(curl -s "$urlp" --header 'Accept: application/json' --compressed)
 	arr=($(echo $urlplaylist | jq -r '.items[].snippet.resourceId.videoId'))
